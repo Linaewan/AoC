@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class Day4Part2 {
+public class Day04Part2 {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		/** Reading the input from a file */

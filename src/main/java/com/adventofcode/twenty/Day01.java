@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Day1 {
+public class Day01 {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		/** Reading the input from a file */

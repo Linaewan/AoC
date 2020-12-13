@@ -1,14 +1,15 @@
 package com.adventofcode.twenty;
 
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
-
 import org.apache.commons.lang3.StringUtils;
 
-public class Day2Part2 {
+public class Day02Part1 {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		/** Reading the input from a file */
@@ -30,11 +31,11 @@ public class Day2Part2 {
 
 		for (String input : myInputList) {
 			String pwd = input.split(colonDelimiter)[1];
-			String firstPosition = input.split(colonDelimiter)[0].split(spaceDelimiter)[0].split(dashDelimiter)[0];
-			String secondPosition = input.split(colonDelimiter)[0].split(spaceDelimiter)[0].split(dashDelimiter)[1];
+			String minAllowed = input.split(colonDelimiter)[0].split(spaceDelimiter)[0].split(dashDelimiter)[0];
+			String maxAllowed = input.split(colonDelimiter)[0].split(spaceDelimiter)[0].split(dashDelimiter)[1];
 			String allowedCharacter = input.split(colonDelimiter)[0].split(spaceDelimiter)[1];
 
-			if (isValidPwd(firstPosition, secondPosition, allowedCharacter, pwd)) {
+			if (isValidPwd(minAllowed, maxAllowed, allowedCharacter, pwd)) {
 				nbValidPwds += 1;
 			}
 		}
@@ -42,16 +43,12 @@ public class Day2Part2 {
 		System.out.println("Number of valid passwords is : " + nbValidPwds);
 	}
 
-	static boolean isValidPwd(String firstPosition, String secondPosition, String allowedCharacter, String pwd) {
+	static boolean isValidPwd(String minAllowed, String maxAllowed, String allowedCharacter, String pwd) {
 		boolean isValid = false;
-		char allowedChar = StringUtils.deleteWhitespace(allowedCharacter).charAt(0);
-		if ((pwd.charAt(Integer.parseInt(firstPosition)) == allowedChar
-				&& pwd.charAt(Integer.parseInt(secondPosition)) != allowedChar)
-				|| (pwd.charAt(Integer.parseInt(firstPosition)) != allowedChar
-						&& pwd.charAt(Integer.parseInt(secondPosition)) == allowedChar)) {
+		int count = StringUtils.countMatches(pwd, StringUtils.deleteWhitespace(allowedCharacter));
+		if (count >= Integer.parseInt(minAllowed) && count <= Integer.parseInt(maxAllowed)) {
 			isValid = true;
 		}
-
 		return isValid;
 	}
 

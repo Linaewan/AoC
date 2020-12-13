@@ -15,7 +15,7 @@ import org.apache.commons.lang3.Range;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
-public class Day5Part2 {
+public class Day05Part2 {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		/** Reading the input from a file */

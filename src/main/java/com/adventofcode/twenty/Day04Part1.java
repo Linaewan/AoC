@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day4Part1 {
+public class Day04Part1 {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		/** Reading the input from a file */

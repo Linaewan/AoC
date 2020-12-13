@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import org.apache.commons.lang3.Range;
 
-public class Day5Part1 {
+public class Day05Part1 {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		/** Reading the input from a file */
